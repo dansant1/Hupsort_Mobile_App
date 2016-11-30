@@ -1,111 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Hupsort</title>
-	<link rel="stylesheet" href="css/styles.css">
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-	<script
-  		src="https://code.jquery.com/jquery-2.2.4.min.js"
-  		integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-  		crossorigin="anonymous"></script>
-
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-	<!-- Begin emoji-picker Stylesheets -->
-  	<link href="lib/css/nanoscroller.css" rel="stylesheet">
-  	<link href="lib/css/emoji.css" rel="stylesheet">
-  	<!-- End emoji-picker Stylesheets -->
-
-  	<script src="https://use.fontawesome.com/2b46c85817.js"></script>
-</head>
-<body>
+<template name="chat">
 	<div class="all-page">
-		
+
 		<div class="menu">
-			<img src="public/hupsort5.png" id="log" style="display: block; text-align: center; width: 150px; height: 50px; margin: 0px auto; padding-top: 13px;">
-	
+			<img src="/hupsort5.png" id="log" style="display: block; text-align: center; width: 150px; height: 50px; margin: 0px auto; padding-top: 13px;">
+
 			<div class="submenu">
-				<div class="pestana">Perfil</div>
-				<div class="pestana seleccionado">CHATROOM</div>
-				<div class="pestana">Mensajes</div>
+				<div class="pestana"><a href="/perfil/{{mid}} ">Perfil</a></div>
+				<div class="pestana seleccionado"><a href="/chat">CHATROOM</a></div>
+				<div class="pestana"><a href="/privado">Mensajes</a></div>
 			</div>
 
 		</div>
-		
+
 		<div class="users" >
-			<a class="user" href="perfil.html">
-				<img src="public/a1.png" alt="">
-				<p>Daniel</p>
+
+			{{#each usuarios}}
+			<a class="user" href="/perfil/{{this._id}}">
+				<img src="/a1.png" alt="">
+				<p> {{this.username}} </p>
 			</a>
-			<a class="user" href="perfil.html">
-				<img src="public/a2.jpg" alt="">
-				<p>Daniel</p>
-			</a>
-			<a class="user" href="perfil.html">
-				<img src="public/a3.jpg" alt="">
-				<p>Daniel</p>
-			</a>
-			<a class="user" href="perfil.html">
-				<img src="public/a4.jpg" alt="">
-				<p>Daniel</p>
-			</a>
-			<a class="user" href="perfil.html">
-				<img src="public/a5.png" alt="">
-				<p>Daniel</p>
-			</a>
+			{{/each}}
 
 		</div>
 
 		<br>
 		<div class="mensajes">
+			{{#each mensajes}}
 			<div class="mensaje">
-				
-				<p class="usuario">daniel</p>
-				<p>Hola que tal?
-				Soy daniel, hago apps
+
+				<p class="usuario">{{de.nombre}} </p>
+				<p> {{mensaje}}
 				</p>
 			</div>
-			<div class="mensaje">
-				
-				<p class="usuario">daniel</p>
-				<p>Hola que tal?
-				Soy daniel, hago apps
-				</p>
-			</div>
-			<div class="mensaje">
-				<p class="usuario">daniel</p>
-				<p>Hola que tal?
-				Soy daniel, hago apps
-				</p>
-			</div>
-			<div class="mensaje">
-				<p class="usuario">daniel</p>
-				<p>Hola que tal?
-				Soy daniel, hago apps
-				</p>
-			</div>
-			<div class="mensaje">
-				<p class="usuario">daniel</p>
-				<p>Hola que tal?
-				Soy daniel, hago apps
-				</p>
-			</div>
-			<div class="mensaje">
-				<p class="usuario">daniel</p>
-				<p>Hola que tal?
-				Soy daniel, hago apps
-				</p>
-			</div>
+			{{/each}}
 		</div>
 		<div class="box">
-			<input type="text" placeholder="Escribe tu mensaje" class=" in" data-emojiable="true">
+			<input type="text" name="mensaje" placeholder="Escribe tu mensaje" class=" in" data-emojiable="true">
 
 			<button class="send" style="background-color: white; color: #ff5252;">
 				<i class="fa fa-paperclip" aria-hidden="true"></i>
@@ -113,35 +45,11 @@
 			<button class="send" style="background-color: white; color: #ff5252;">
 				<i class="fa fa-paint-brush" aria-hidden="true"></i>
 			</button>
-			<button class="send">
+			<button class="send d">
 				<i class="fa fa-paper-plane" aria-hidden="true"></i>
 			</button>
 		</div>
 	</div>
 
-	<!-- Begin emoji-picker JavaScript -->
-  	<script src="lib/js/nanoscroller.min.js"></script>
-  	<script src="lib/js/tether.min.js"></script>
-  	<script src="lib/js/config.js"></script>
-  	<script src="lib/js/util.js"></script>
-  	<script src="lib/js/jquery.emojiarea.js"></script>
-  	<script src="lib/js/emoji-picker.js"></script>
-  	<!-- End emoji-picker JavaScript -->
+</template>
 
-  	<script>
-    	$(function() {
-      	// Initializes and creates emoji set from sprite sheet
-      	window.emojiPicker = new EmojiPicker({
-        	emojiable_selector: '[data-emojiable=true]',
-        	assetsPath: 'lib/img/',
-        	popupButtonClasses: 'fa fa-smile-o'
-      	});
-      	// Finds all elements with `emojiable_selector` and converts them to rich emoji input fields
-      	// You may want to delay this step if you have dynamically created input fields that appear later in the loading process
-      	// It can be called as many times as necessary; previously converted input fields will not be converted again
-      	window.emojiPicker.discover();
-    	});
-  	</script>
-
-</body>
-</html>

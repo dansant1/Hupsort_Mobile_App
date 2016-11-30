@@ -1,101 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Hupsort</title>
-	<link rel="stylesheet" href="css/styles.css">
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-	<script
-  		src="https://code.jquery.com/jquery-2.2.4.min.js"
-  		integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-  		crossorigin="anonymous"></script>
-
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-	<link href="lib/css/nanoscroller.css" rel="stylesheet">
-  	<link href="lib/css/emoji.css" rel="stylesheet">
-	 <script src="lib/js/nanoscroller.min.js"></script>
-  <script src="lib/js/tether.min.js"></script>
-  <script src="lib/js/config.js"></script>
-  <script src="lib/js/util.js"></script>
-  <script src="lib/js/jquery.emojiarea.js"></script>
-  <script src="lib/js/emoji-picker.js"></script>
-
-  <script src="https://use.fontawesome.com/2b46c85817.js"></script>
-</head>
-<body>
+<template name="perfil">
 	<div class="all-page">
-		
+
 		<div class="menu">
-			<img src="public/hupsort5.png" id="log" style="display: block; text-align: center; width: 150px; height: 50px; margin: 0px auto; padding-top: 13px;">
+			<img src="/hupsort5.png" id="log" style="display: block; text-align: center; width: 150px; height: 50px; margin: 0px auto; padding-top: 13px;">
 			<div class="submenu">
-				<div class="pestana seleccionado">Perfil</div>
-				<div class="pestana ">CHATROOM</div>
-				<div class="pestana">Mensajes</div>
+				<div class="pestana seleccionado"><a href="/perfil{{id}} ">Perfil</a></div>
+				<div class="pestana "><a href="/chat">CHATROOM</a></div>
+				<div class="pestana"><a href="/privado">Mensajes</a></div>
 			</div>
 
 		</div>
-		
-		
-		
+
+
+
 		<div class="perfil">
 			<div class="portada">
 				<div class="foto">
-					<img src="public/a5.png" alt="">
+					<img src="/a5.png" alt="">
 				</div>
-				<h1>@daniel24</h1>
+				<h1> {{username}} </h1>
 				<p>Hola soy Daniel</p>
-				<!--<div class="opciones">
-					<i class="fa fa-mars-stroke" aria-hidden="true"></i> Hombre
-					<i class="fa fa-globe" aria-hidden="true"></i> 28
-					<i class="fa fa-globe" aria-hidden="true"></i> Perú
-					<i class="fa fa-globe" aria-hidden="true"></i> Heterosexual
-					<i class="fa fa-globe" aria-hidden="true"></i> VIH
-				</div> -->
-				
-				<button class="m">Agregar amigo</button>
-				<button class="m" style="margin-left: 10px;">Enviar mensaje</button>
+
+
+				<button class="m a">Agregar amigo</button>
+				<button class="m" style="margin-left: 10px;"><a href="/perfil/{{id}} ">Enviar mensaje</a></button>
 			</div>
 
 		</div>
 
 		<div class="users" style="margin-bottom: 17px">
-			<a class="user" href="perfil.html">
-				<img src="public/a1.png" alt="">
-				<p>Daniel</p>
+
+			{{#each amigos}}
+			<a class="user" href="/perfil/{{this.amigoId}} ">
+				<img src="/a1.png" alt="">
+				<p>{{this.amigo}}</p>
 			</a>
-			<a class="user" href="perfil.html">
-				<img src="public/a2.jpg" alt="">
-				<p>Daniel</p>
-			</a>
-			<a class="user" href="perfil.html">
-				<img src="public/a3.jpg" alt="">
-				<p>Daniel</p>
-			</a>
-			<a class="user" href="perfil.html">
-				<img src="public/a4.jpg" alt="">
-				<p>Daniel</p>
-			</a>
-			<a class="user" href="perfil.html">
-				<img src="public/a5.png" alt="">
-				<p>Daniel</p>
-			</a>
+			{{/each}}
 
 		</div>
 		<br>
 		<div class="muro">
 				<div class="pub" style="padding-top: 33px;">
-					
-					
+
+
 					<input type="text" class="comentario" placeholder="Comparte lo que desees..." style="margin-left: 0px;">
 					<input type="submit" class="enviar-comentario" value="Postear" style="width: 77px;">
 				</div>
+
+				{{#each publicaciones}}
 				<div class="pub">
 					<i class="fa fa-times remove" aria-hidden="true"></i>
 					<p>Mi primera publicación</p>
@@ -105,42 +58,12 @@
 					<input type="text" class="comentario" placeholder="Escriba un comentario">
 					<input type="submit" class="enviar-comentario" value="Comentar">
 				</div>
-				<div class="pub">
-					<i class="fa fa-times remove" aria-hidden="true"></i> 5
-					<p>Mi segunda publicación</p>
-					<iframe width="320" height="200" src="https://www.youtube.com/embed/XGSy3_Czz8k">
-					</iframe>
-					<span class="heart">
-						<i class="fa fa-heart" aria-hidden="true"></i> 1
-					</span>
-					<input type="text" class="comentario" placeholder="Escriba un comentario">
-					<input type="submit" class="enviar-comentario" value="Comentar">
-				</div>
-				<div class="pub">
-					<i class="fa fa-times remove" aria-hidden="true"></i>
-					<p>Mi tercera publicación</p>
-					<img src="public/login-register.jpg" alt="">
-					<span class="heart">
-						<i class="fa fa-heart" aria-hidden="true"></i> 2
-					</span>
-					<input type="text" class="comentario" placeholder="Escriba un comentario">
-					<input type="submit" class="enviar-comentario" value="Comentar">
-				</div>
-				<div class="pub">
-					<i class="fa fa-times remove" aria-hidden="true"></i>
-					<p>Mi cuarta publicación</p>
-					<span class="heart">
-						<i class="fa fa-heart" aria-hidden="true"></i> 10
-					</span>
-					<input type="text" class="comentario" placeholder="Escriba un comentario">
-					<input type="submit" class="enviar-comentario" value="Comentar">
-				</div>
+				{{/each}}
+
 			</div>
-		
+
 	</div>
-	
 
-	
+</template>
 
-</body>
-</html>
+
