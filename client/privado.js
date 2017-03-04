@@ -1,32 +1,69 @@
-Template.privado.onRendered(function () {
-	/*$(function() {
-      	// Initializes and creates emoji set from sprite sheet
-      	window.emojiPicker = new EmojiPicker({
-        	emojiable_selector: '[data-emojiable=true]',
-        	assetsPath: 'lib/img/',
-        	popupButtonClasses: 'fa fa-smile-o'
-      	});
-      	// Finds all elements with `emojiable_selector` and converts them to rich emoji input fields
-      	// You may want to delay this step if you have dynamically created input fields that appear later in the loading process
-      	// It can be called as many times as necessary; previously converted input fields will not be converted again
-      	window.emojiPicker.discover();
-    	});*/
+Template.privado.onCreated(function () {
+	var self = this;
+
+	self.autorun(function () {
+
+
+			H.subscribe('conversaciones');
+			console.log(FlowRouter.getParam('id'));
+			H.subscribe('mensajesDirectos', FlowRouter.getParam('id'), function () {
+				console.log(Mensajes.find().fetch());
+			});
+
+	});
 });
 
 Template.privado.helpers({
 	usuarios: function () {
-		return Usuarios.find();
+		return Conversaciones.find({},  {limit: 5});
 	},
 	user: function () {
 		return Usuarios.findOne({_id: FlowRouter.getParam('id')}).username;
 	},
 	pais: function () {
 		return Usuarios.findOne({_id: FlowRouter.getParam('id')}).profile.pais;
+	},
+	id: function () {
+		return H.userId()
+	},
+	mensajes() {
+		return Mensajes.find()
 	}
 });
 
+Template.privado.events({
+	'click .send': function (event, template) {
+
+		let mensaje = template.find("[name='mensaje']").value
+
+		let para = {
+			id: FlowRouter.getParam('id')
+		}
+
+		H.call('enviarMensajePrivado', mensaje, para, function (err) {
+			if (err) {
+				console.log(err)
+			} else {
+				template.find("[name='mensaje']").value = ""
+			}
+		});
+	}
+})
+
+Template.privado2.onCreated(function () {
+	var self = this;
+
+	self.autorun(function () {
+		H.subscribe('conversaciones', function() {
+		});
+	})
+})
+
 Template.privado2.helpers({
 	usuarios: function () {
-		return Usuarios.find();
+	return Conversaciones.find({},  {limit: 5});
+	},
+	id: function () {
+		return H.userId()
 	}
 });

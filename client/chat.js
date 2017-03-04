@@ -1,15 +1,33 @@
-B = DDP.connect('http://localhost:3000');
-Mensajes = new Mongo.Collection('mensajes', B);
-Usuarios = new Mongo.Collection('users', B);
+Mensajes = new Mongo.Collection('mensajes', H);
+Usuarios = new Mongo.Collection('users', H);
+
+Amigos = new Mongo.Collection('amigos', H);
+Conversaciones = new Mongo.Collection('conversaciones', H);
+Publicaciones = new Mongo.Collection('muro', H);
+
+Comentarios = new Mongo.Collection('comentarios', H);
+Likes = new Mongo.Collection('likes', H);
 
 Template.chat.onCreated(function () {
 	var self = this;
 
 	self.autorun(function () {
-		B.subscribe('mensajes', function() {
+			H.subscribe('mensajes', function() {
 
-  					console.log(Mensajes.find().fetch().length);
-				});
+				console.log(Mensajes.find().fetch().length);
+			});
+
+			H.subscribe('usuarios', function() {
+
+					console.log(Usuarios.find().fetch().length);
+			});
+
+			H.subscribe('amigos', function() {
+
+					console.log(Amigos.find().fetch().length);
+			});
+
+
 	});
 });
 
@@ -25,20 +43,6 @@ Template.chat.helpers({
 	}
 });
 
-Template.chat.onRendered(function () {
-	/*$(function() {
-      	// Initializes and creates emoji set from sprite sheet
-      	window.emojiPicker = new EmojiPicker({
-        	emojiable_selector: '[data-emojiable=true]',
-        	assetsPath: 'lib/img/',
-        	popupButtonClasses: 'fa fa-smile-o'
-      	});
-      	// Finds all elements with `emojiable_selector` and converts them to rich emoji input fields
-      	// You may want to delay this step if you have dynamically created input fields that appear later in the loading process
-      	// It can be called as many times as necessary; previously converted input fields will not be converted again
-      	window.emojiPicker.discover();
-      });*/
-});
 
 Template.chat.events({
 	'click .d': function (event, template) {

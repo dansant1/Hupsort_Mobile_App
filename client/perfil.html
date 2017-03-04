@@ -5,14 +5,12 @@
 		<div class="menu">
 			<img src="/hupsort5.png" id="log" style="display: block; text-align: center; width: 150px; height: 50px; margin: 0px auto; padding-top: 13px;">
 			<div class="submenu">
-				<div class="pestana seleccionado"><a href="/perfil{{id}} ">Perfil</a></div>
-				<div class="pestana "><a href="/chat">CHATROOM</a></div>
-				<div class="pestana"><a href="/privado">Mensajes</a></div>
+				<div class="pestana seleccionado"><a href="/perfil{{id}}" style="color: white">Perfil</a></div>
+				<div class="pestana "><a href="/chat" style="color: white">CHATROOM</a></div>
+				<div class="pestana"><a href="/privado" style="color: white">Mensajes</a></div>
 			</div>
 
 		</div>
-
-
 
 		<div class="perfil">
 			<div class="portada">
@@ -20,15 +18,15 @@
 					<img src="/a5.png" alt="">
 				</div>
 				<h1> {{username}} </h1>
-				<p>Hola soy Daniel</p>
+				<p>{{estado}}</p>
 
 
 				<button class="m a">Agregar amigo</button>
-				<button class="m" style="margin-left: 10px;"><a href="/perfil/{{id}} ">Enviar mensaje</a></button>
+				<button class="m" style="margin-left: 10px;"><a href="/privado/{{id}}" style="color: #B24357;">Enviar mensaje</a></button>
 			</div>
 
 		</div>
-
+		{{#if hayAmigos}}
 		<div class="users" style="margin-bottom: 17px">
 
 			{{#each amigos}}
@@ -39,24 +37,30 @@
 			{{/each}}
 
 		</div>
+		{{/if}}
 		<br>
 		<div class="muro">
 				<div class="pub" style="padding-top: 33px;">
 
 
-					<input type="text" class="comentario" placeholder="Comparte lo que desees..." style="margin-left: 0px;">
-					<input type="submit" class="enviar-comentario" value="Postear" style="width: 77px;">
+					<input type="text" class="comentario" name="comentario" placeholder="Comparte lo que desees..." style="margin-left: 0px;">
+					<input type="submit" class="enviar-comentario ec" value="Postear" style="width: 62px;">
 				</div>
 
 				{{#each publicaciones}}
 				<div class="pub">
 					<i class="fa fa-times remove" aria-hidden="true"></i>
-					<p>Mi primera publicación</p>
+					<p>{{texto}}</p>
 					<span class="heart">
-						<i class="fa fa-heart" style="color: #7f8c8d" aria-hidden="true"></i> 19
+						<i class="fa fa-heart" style="color: #7f8c8d" aria-hidden="true"></i> {{likes}}
 					</span>
-					<input type="text" class="comentario" placeholder="Escriba un comentario">
-					<input type="submit" class="enviar-comentario" value="Comentar">
+					<input type="text" class="comentario co{{this._id}}" name="co" style="width: 70%" placeholder="Escriba un comentario">
+					<input type="button" class="enviar-comentario comentar" value="Comentar">
+					<br>
+					<br>
+					{{#each comentarios}}
+					<p><span style="color: #B24357">{{username}}: </span> {{comentario}}</p>
+					{{/each}}
 				</div>
 				{{/each}}
 
@@ -65,5 +69,3 @@
 	</div>
 
 </template>
-
-

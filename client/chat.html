@@ -7,14 +7,19 @@
 			<img src="/hupsort5.png" id="log" style="display: block; text-align: center; width: 150px; height: 50px; margin: 0px auto; padding-top: 13px;">
 
 			<div class="submenu">
-				<div class="pestana"><a href="/perfil/{{mid}} ">Perfil</a></div>
-				<div class="pestana seleccionado"><a href="/chat">CHATROOM</a></div>
-				<div class="pestana"><a href="/privado">Mensajes</a></div>
+				<div class="pestana"><a href="/perfil/{{mid}}" style="color: white">Perfil</a></div>
+				<div class="pestana seleccionado"><a href="/chat" style="color: white">CHATROOM</a></div>
+				<div class="pestana"><a href="/privado" style="color: white">Mensajes</a></div>
 			</div>
 
 		</div>
 
-		<div class="users" >
+		<div class="users" style="overflow-x: scroll;
+    overflow-y: hidden;
+		height: 89px;
+    width: 90%;
+		margin: 5px auto;
+    white-space:nowrap">
 
 			{{#each usuarios}}
 			<a class="user" href="/perfil/{{this._id}}">
@@ -25,8 +30,8 @@
 
 		</div>
 
-		<br>
-		<div class="mensajes">
+
+		<div class="mensajes" style="margin-top: 0; height: 55vh">
 			{{#each mensajes}}
 			<div class="mensaje">
 
@@ -52,4 +57,3 @@
 	</div>
 
 </template>
-
