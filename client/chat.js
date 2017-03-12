@@ -8,13 +8,29 @@ Publicaciones = new Mongo.Collection('muro', H);
 Comentarios = new Mongo.Collection('comentarios', H);
 Likes = new Mongo.Collection('likes', H);
 
+Avatares = new Mongo.Collection('avatars', H);
+
+function gotoBottom(id){
+   var div = document.getElementById(id);
+   div.scrollTop = div.scrollHeight - div.clientHeight;
+}
+
+Template.chat.onRendered(function () {
+	$('#cp6').colorpicker({
+      color: "#88cc33",
+      horizontal: true
+  });
+})
+
 Template.chat.onCreated(function () {
 	var self = this;
 
 	self.autorun(function () {
 			H.subscribe('mensajes', function() {
 
-				console.log(Mensajes.find().fetch().length);
+				setTimeout(function () {
+      		gotoBottom("mensajes3")
+   			}, 500);
 			});
 
 			H.subscribe('usuarios', function() {
@@ -25,6 +41,11 @@ Template.chat.onCreated(function () {
 			H.subscribe('amigos', function() {
 
 					console.log(Amigos.find().fetch().length);
+			});
+
+			H.subscribe('avatares', function() {
+
+					console.log(Avatares.find().fetch().length);
 			});
 
 
@@ -40,20 +61,33 @@ Template.chat.helpers({
 	},
 	mid: function () {
 		return H.userId()
+	},
+	nombre(username) {
+		let nombre = username;
+
+		if (nombre.length > 6) {
+			return nombre.slice(0, 6) + '...';
+		} else {
+			return nombre
+		}
 	}
 });
 
 
 Template.chat.events({
+	'click .logout': function () {
+		FlowRouter.go('/')
+	},
 	'click .d': function (event, template) {
 
 		let mensaje = template.find("[name='mensaje']").value
-		let color = '#ffffff'
+		let color = 'black'
 
 		H.call('enviarMensajeChat', mensaje, color, function (err) {
 			if (err) {
 				console.log(err)
 			} else {
+				gotoBottom("mensajes3")
 				template.find("[name='mensaje']").value = ""
 			}
 		});

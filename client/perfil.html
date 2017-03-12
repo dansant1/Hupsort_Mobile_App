@@ -9,7 +9,7 @@
 				<div class="pestana "><a href="/chat" style="color: white">CHATROOM</a></div>
 				<div class="pestana"><a href="/privado" style="color: white">Mensajes</a></div>
 			</div>
-
+			<i class="fa fa-sign-out logout" style="position: absolute; top: 25px;  right: 20px; font-size: 20px; color: white" aria-hidden="true"></i>
 		</div>
 
 		<div class="perfil">
@@ -22,10 +22,40 @@
 
 
 				<button class="m a">Agregar amigo</button>
+				<i class="fa fa-info reportar" aria-hidden="true" style="font-size: 28px; margin-left: 20px; margin-right: 16px"></i>
 				<button class="m" style="margin-left: 10px;"><a href="/privado/{{id}}" style="color: #B24357;">Enviar mensaje</a></button>
 			</div>
 
 		</div>
+		<table class="table">
+	    <tbody>
+	      <tr>
+	        <td>País</td>
+	        <td>{{pais}}</td>
+
+	      </tr>
+	      <tr>
+	        <td>Edad</td>
+	        <td>{{edad}}</td>
+
+	      </tr>
+	      <tr>
+	        <td>Género</td>
+	        <td>{{genero}}</td>
+
+	      </tr>
+				<tr>
+					<td>Orientación</td>
+					<td>{{orientacion}}</td>
+
+				</tr>
+				<tr>
+					<td>Condición</td>
+					<td>{{condicion}}</td>
+
+				</tr>
+	    </tbody>
+  	</table>
 		{{#if hayAmigos}}
 		<div class="users" style="margin-bottom: 17px">
 
@@ -40,26 +70,39 @@
 		{{/if}}
 		<br>
 		<div class="muro">
+			{{#if esMiMuro}}
 				<div class="pub" style="padding-top: 33px;">
-
-
-					<input type="text" class="comentario" name="comentario" placeholder="Comparte lo que desees..." style="margin-left: 0px;">
+					<input type="text" class="comentario" name="comentario" placeholder="Comparte lo que desees..." style="margin-left: 0px; width: 80%">
+					<span class="btn btn-default btn-file" style="background: #B24357;
+					border-color: #B24357;
+					color: white;">
+    				<i class="fa fa-picture-o" aria-hidden="true"></i> <input type="file">
+					</span>
+					<br>
+					<br>
 					<input type="submit" class="enviar-comentario ec" value="Postear" style="width: 62px;">
 				</div>
-
+				{{/if}}
 				{{#each publicaciones}}
 				<div class="pub">
+					{{#if esMiMuro}}
 					<i class="fa fa-times remove" aria-hidden="true"></i>
+					{{/if}}
+					{{#if this.esYoutube}}
+					<iframe style="width: 92%; height: 220px; margin: 5px auto; display: block" src={{ytb}} frameborder="0" allowfullscreen >
+					</iframe>
+					{{else}}
 					<p>{{texto}}</p>
+					{{/if}}
 					<span class="heart">
-						<i class="fa fa-heart" style="color: #7f8c8d" aria-hidden="true"></i> {{likes}}
+						<i class="fa fa-heart" aria-hidden="true"></i> {{likes}}
 					</span>
 					<input type="text" class="comentario co{{this._id}}" name="co" style="width: 70%" placeholder="Escriba un comentario">
 					<input type="button" class="enviar-comentario comentar" value="Comentar">
 					<br>
 					<br>
 					{{#each comentarios}}
-					<p><span style="color: #B24357">{{username}}: </span> {{comentario}}</p>
+					<p><span style="color: #B24357">{{this.username}}: </span> {{comentario}}</p>
 					{{/each}}
 				</div>
 				{{/each}}
@@ -68,4 +111,37 @@
 
 	</div>
 
+</template>
+
+<template name="Reportar">
+	 <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+
+
+										<div class="modal-header" style="padding-bottom: 2px;">
+												<h4 class="modal-title">Reportar</h4>
+
+												<button style="padding: 3px; position: relative; top: -20px; right: -548px;" type="button" class="btn btn-default" data-dismiss="modal">
+													<i class="fa fa-times" aria-hidden="true"></i>
+												</button>
+		                </div>
+
+
+                <div class="modal-body">
+                   <form>
+  						<div class="form-group">
+  					  		<textarea placeholder="¿Por que deseas reportar este usuario?" class="form-control" rows="10" id="comment"></textarea>
+						</div>
+
+  						<button data-dismiss="modal" type="submit" class="btn btn-default">Reportar</button>
+					</form>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
 </template>

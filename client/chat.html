@@ -11,7 +11,7 @@
 				<div class="pestana seleccionado"><a href="/chat" style="color: white">CHATROOM</a></div>
 				<div class="pestana"><a href="/privado" style="color: white">Mensajes</a></div>
 			</div>
-
+			<i class="fa fa-sign-out logout" style="position: absolute; top: 25px;  right: 20px; font-size: 20px; color: white" aria-hidden="true"></i>
 		</div>
 
 		<div class="users" style="overflow-x: scroll;
@@ -24,19 +24,19 @@
 			{{#each usuarios}}
 			<a class="user" href="/perfil/{{this._id}}">
 				<img src="/a1.png" alt="">
-				<p> {{this.username}} </p>
+				<p> {{nombre this.username}} </p>
 			</a>
 			{{/each}}
 
 		</div>
 
 
-		<div class="mensajes" style="margin-top: 0; height: 55vh">
+		<div class="mensajes" id="mensajes3" style="margin-top: 0; height: 55vh">
 			{{#each mensajes}}
 			<div class="mensaje">
 
-				<p class="usuario">{{de.nombre}} </p>
-				<p> {{mensaje}}
+				<p class="usuario"><a href="/perfil/{{this.de.id}}" style="color: #B24357">{{de.nombre}}</a> </p>
+				<p style="color: {{this.color}}"> {{mensaje}}
 				</p>
 			</div>
 			{{/each}}
@@ -44,12 +44,16 @@
 		<div class="box">
 			<input type="text" name="mensaje" placeholder="Escribe tu mensaje" class=" in" data-emojiable="true">
 
-			<button class="send" style="background-color: white; color: #ff5252;">
+			<!--<button class="send" style="background-color: white; color: #ff5252;">
 				<i class="fa fa-paperclip" aria-hidden="true"></i>
-			</button>
-			<button class="send" style="background-color: white; color: #ff5252;">
+			</button> -->
+			<button class="send" id="cp6" style="background-color: white; color: #B24357">
 				<i class="fa fa-paint-brush" aria-hidden="true"></i>
 			</button>
+			<!--<div id="cp2" class="input-group colorpicker-component">
+			    <input type="text" value="#00AABB" class="form-control" />
+			    <span class="input-group-addon"><i></i></span>
+			</div>-->
 			<button class="send d">
 				<i class="fa fa-paper-plane" aria-hidden="true"></i>
 			</button>

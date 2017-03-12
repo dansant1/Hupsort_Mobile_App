@@ -185,7 +185,7 @@ hr {
 }
 
 .user p {
-	width: 80%;
+	max-width: 80%;
 	margin: 5px auto;
 	text-align: center;
 	color:  #B24357;
@@ -195,7 +195,7 @@ hr {
 
 .mensajes {
 	width: 90%;
-	height: 350px;
+	height: 300px;
 	overflow-y: scroll;
 	margin: 10px auto;
 	margin-top: 10px;
@@ -263,7 +263,7 @@ hr {
 	border: none;
 	margin-left: 5px;
 	position: relative;
-	right: -5px;
+	right: -34px;
 	top: 0px;
 	color: white;
 	text-align: center;
@@ -429,7 +429,7 @@ i.remove {
 .heart i {
 	position: relative;
 	left: 0px;
-	color: #B24357;
+
 }
 
 iframe {
@@ -498,4 +498,34 @@ iframe {
 
 .enviar-comentario:hover {
 	box-shadow: 0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08);
+}
+
+.colorpicker {
+	top: 400px !important;
+}
+
+*:focus {
+	outline: none;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: #B24357;
+		border-color: #B24357;
+		color: white;
+    cursor: inherit;
+    display: block;
 }

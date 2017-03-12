@@ -62,13 +62,51 @@ Template.perfil.helpers({
 	estado() {
 		return Usuarios.findOne({_id: FlowRouter.getParam('user')}).profile.estado
 	},
+	pais() {
+		return Usuarios.findOne({_id: FlowRouter.getParam('user')}).profile.pais
+	},
+	genero() {
+		return Usuarios.findOne({_id: FlowRouter.getParam('user')}).profile.genero
+	},
+	condicion() {
+		return Usuarios.findOne({_id: FlowRouter.getParam('user')}).profile.condicion
+	},
+	orientacion() {
+		return Usuarios.findOne({_id: FlowRouter.getParam('user')}).profile.orientacion
+	},
+	edad() {
+		return Usuarios.findOne({_id: FlowRouter.getParam('user')}).profile.edad
+	},
 	id: function () {
 		return FlowRouter.getParam('user')
 	},
+	esMiMuro() {
+		if (H.userId() === FlowRouter.getParam('user')) {
+			return true
+		} else {
+			return false
+		}
+	},
+	ytb: function () {
+    var url = this.youtube;
 
+    var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=|\?v=)([^#\&\?]*).*/;
+    var match = url.match(regExp);
+    if (match && match[2].length == 11) {
+        var youtube = "http://www.youtube.com/embed/" + match[2] + "?autoplay=0";
+        //$('#ytplayerSide').attr('src', 'https://www.youtube.com/embed/' + match[2] + '?autoplay=0');
+        return youtube;
+    }
+  },
 });
 
 Template.perfil.events({
+	'click .logout': function () {
+		FlowRouter.go('/')
+	},
+	'click .reportar'() {
+		Modal.show('Reportar')
+	},
 	'click .a': function () {
 		let datos = {
 			para: FlowRouter.getParam('user'),
@@ -99,7 +137,7 @@ Template.perfil.events({
 			if (err) {
 				console.log(err)
 			} else {
-				console.log('hola');
+				$('.fa-heart').css('color', '#B24357')
 			}
 
 		});

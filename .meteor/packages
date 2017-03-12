@@ -24,3 +24,8 @@ kadira:flow-router
 kadira:blaze-layout
 twbs:bootstrap
 fortawesome:fontawesome
+cfs:standard-packages
+cfs:gridfs
+risul:bootstrap-colorpicker
+accounts-password
+peppelg:bootstrap-3-modal

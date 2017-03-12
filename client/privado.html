@@ -12,22 +12,24 @@
 				<div class="pestana"><a href="/chat" style="color: white">CHATROOM</a></div>
 				<div class="pestana seleccionado"><a href="/privado" style="color: white">Mensajes</a></div>
 			</div>
-
+			<i class="fa fa-sign-out logout" style="position: absolute; top: 25px;  right: 20px; font-size: 20px; color: white" aria-hidden="true"></i>
 		</div>
 
 		<div class="users" >
 			{{#each usuarios}}
 			<a class="user" href="/privado/{{usuarioId}} ">
 				<img src="/a1.png" alt="">
+					<p> {{nombre username}} </p>
 			</a>
 			{{/each}}
 
 		</div>
+		<br>
 		<div class="raya"></div>
 
 		<div class="mensajes">
 			{{#each mensajes}}
-			<div class="mensaje">
+			<div class="mensaje" id="mensajes3">
 
 				<p class="usuario">{{de.nombre}}</p>
 				<p style="color: {{this.color}}">{{mensaje}}
@@ -37,13 +39,13 @@
 		</div>
 		<div class="box">
 			<input type="text" placeholder="Escribe tu mensaje" name="mensaje" class="in" data-emojiable="true">
-			<button class="send" style="background-color: white; color: #ff5252;">
+			<!--<button class="send" style="background-color: white; color: #ff5252;">
 				<i class="fa fa-paperclip" aria-hidden="true"></i>
 			</button>
 			<button class="send" style="background-color: white; color: #ff5252;">
 				<i class="fa fa-volume-up" aria-hidden="true"></i>
-			</button>
-			<button class="send">
+			</button> -->
+			<button class="send" style="right: -75px">
 				<i class="fa fa-paper-plane" aria-hidden="true"></i>
 			</button>
 		</div>
@@ -66,7 +68,7 @@
 				<div class="pestana "><a href="/chat" style="color: white">CHATROOM</a></div>
 				<div class="pestana  seleccionado"><a href="/privado" style="color: white">Mensajes</a></div>
 			</div>
-
+			<i class="fa fa-sign-out logout" style="position: absolute; top: 25px;  right: 20px; font-size: 20px; color: white" aria-hidden="true"></i>
 		</div>
 
 		<div class="users" >
@@ -74,11 +76,13 @@
 			{{#each usuarios}}
 			<a class="user" href="/privado/{{_id}} ">
 				<img src="/a1.png" alt="">
+					<p> {{nombre username}} </p>
 			</a>
 
 			{{/each}}
 
 		</div>
+		<br>
 		<div class="raya"></div>
 		<div class="receptor">
 
