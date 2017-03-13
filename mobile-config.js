@@ -20,4 +20,4 @@ App.setPreference('BackgroundColor', '0xff0000ff');
 App.setPreference('Orientation', 'portrait');
 App.setPreference('SplashScreen', 'CDVSplashScreen');
 App.setPreference('AutoHideSplashScreen', false);
-App.setPreference('SplashScreenDelay', '1000');
+App.setPreference('SplashScreenDelay', '2000');

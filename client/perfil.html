@@ -95,7 +95,7 @@
 					<p>{{texto}}</p>
 					{{/if}}
 					<span class="heart">
-						<i class="fa fa-heart" aria-hidden="true"></i> {{likes}}
+						<i class="fa fa-heart" aria-hidden="true"></i> <a style="color: black" href="/likes/{{this._id}}">{{likes}}</a>
 					</span>
 					<input type="text" class="comentario co{{this._id}}" name="co" style="width: 70%" placeholder="Escriba un comentario">
 					<input type="button" class="enviar-comentario comentar" value="Comentar">

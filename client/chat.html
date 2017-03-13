@@ -61,3 +61,19 @@
 	</div>
 
 </template>
+
+<template name="listaLikes">
+	<div style="width: 100%; height: 50px; background-color: #B24357; padding: 15px">
+		<h4 style="margin: 0; color: white">Likes</h4>
+	</div>
+	<table class="table">
+		<tbody>
+			{{#each personas}}
+			<tr>
+				<td style="padding: 15px">{{this.de.nombre}}</td>
+				<td><a href="/perfil/{{this.de.id}}" style="background-color: #B24357; border-color: #B24357;" class="btn btn-danger">Ver Perfil</a></td>
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
+</template>

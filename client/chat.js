@@ -93,3 +93,17 @@ Template.chat.events({
 		});
 	}
 });
+
+Template.listaLikes.onCreated( function () {
+  var self = this;
+
+  self.autorun(function () {
+    H.subscribe('likes', function() {});
+  })
+})
+
+Template.listaLikes.helpers({
+  personas() {
+    return Likes.find({pubId: FlowRouter.getParam('pubId')})
+  }
+})
