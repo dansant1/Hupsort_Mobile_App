@@ -8,7 +8,7 @@ Conversaciones = new Mongo.Collection('conversaciones', H);
 Publicaciones = new Mongo.Collection('muro', H);
 
 Imagenes = new Mongo.Collection('imagenes', H);
-
+ImagenesMuro = new Mongo.Collection('imagenes_muro', H)
 Comentarios = new Mongo.Collection('comentarios', H);
 Likes = new Mongo.Collection('likes', H);
 

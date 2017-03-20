@@ -22,6 +22,11 @@ Template.perfil.onCreated( function () {
 
 		});
 
+		H.subscribe('imagenesMuro', function() {
+
+
+		});
+
 		H.subscribe('amigos', function() {
 
 
@@ -54,6 +59,9 @@ Template.perfil.helpers({
 	},
 	avatar() {
 		return Files.find({userId: FlowRouter.getParam('user')})
+	},
+	imagenes() {
+		return ImagenesMuro.find({pubId: this._id})
 	},
 	comentarios() {
 		return Comentarios.find({pubId: this._id})

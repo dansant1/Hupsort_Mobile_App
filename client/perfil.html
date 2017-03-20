@@ -94,6 +94,9 @@
 					<iframe style="width: 92%; height: 220px; margin: 5px auto; display: block" src={{ytb}} frameborder="0" allowfullscreen >
 					</iframe>
 					{{else}}
+					{{#each imagenes}}
+					<img src="{{this.url}}" alt="{{url}}" style="width: 90%; display: block; margin: 4px auto; text-align: center">
+					{{/each}}
 					<p>{{texto}}</p>
 					{{/if}}
 					<span class="heart">
