@@ -16,6 +16,10 @@ Template.login.events({
           alert(error);
         } else {
           //alert('hola')
+          Meteor._localStorage.setItem(
+            "remote.userId",
+            result.id
+          );
           H.setUserId(result.id);
 
           //alert(result.id)

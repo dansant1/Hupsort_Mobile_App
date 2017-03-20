@@ -187,5 +187,54 @@ Template.perfil.events({
 			}
 
 		});
+	},
+	'change .pub'() {
+
+			var texto = '.';
+
+      H.call('postear', texto, function (err, result) {
+          if (err) {
+            console.log('Hubo un error');
+          } else {
+						let archivo = document.getElementById("foto");
+
+						if ('files' in archivo) {
+
+						if (archivo.files.length == 0) {
+							 alert('Selecciona un archivo, vuelve a intentarlo', 'warning');
+						} else if (archivo.files.length > 1) {
+							 alert('Selecciona solo un archivo, vuelve a intentarlo', 'warning');
+						} else {
+
+
+							for (var i = 0; i < archivo.files.length; i++) {
+
+								var filei = archivo.files[i];
+
+
+								const uploader = new Slingshot.Upload( "uploadToAmazonS3" );
+
+								uploader.send( filei, ( error, url ) => {
+									if ( error ) {
+										console.log(error);
+									} else {
+										H.call( "storeUrlOfImageMuroInDatabase", url, pubId, ( error ) => {
+											if ( error ) {
+												console.log(error)
+											} else {
+												console.log('subio!')
+
+											}
+										});
+									}
+								})
+
+							}
+						}
+				}
+          }
+      });
+
+
 	}
 });
