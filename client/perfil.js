@@ -17,6 +17,11 @@ Template.perfil.onCreated( function () {
 
 		});
 
+		H.subscribe('files', function() {
+
+
+		});
+
 		H.subscribe('amigos', function() {
 
 
@@ -46,6 +51,9 @@ Template.perfil.helpers({
 		} else {
 			return false;
 		}
+	},
+	avatar() {
+		return Files.find({userId: FlowRouter.getParam('user')})
 	},
 	comentarios() {
 		return Comentarios.find({pubId: this._id})

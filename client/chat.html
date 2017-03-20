@@ -23,7 +23,9 @@
 
 			{{#each usuarios}}
 			<a class="user" href="/perfil/{{this._id}}">
-				<img src="/a1.png" alt="">
+				{{#each avatar}}
+				<img src="{{this.url}}" alt="{{url}}">
+				{{/each}}
 				<p> {{nombre this.username}} </p>
 			</a>
 			{{/each}}

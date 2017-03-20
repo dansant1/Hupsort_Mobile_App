@@ -9,7 +9,9 @@ Template.privado.onCreated(function () {
 	self.autorun(function () {
 
 
-			H.subscribe('conversaciones');
+			H.subscribe('conversaciones', function () {
+			  console.log(Conversaciones.find({},  {limit: 5}));
+			});
 			console.log(FlowRouter.getParam('id'));
 			H.subscribe('mensajesDirectos', FlowRouter.getParam('id'), function () {
 				setTimeout(function () {
@@ -17,8 +19,11 @@ Template.privado.onCreated(function () {
    			}, 500);
 			});
 
-			H.subscribe('usuarios', function() {
+      H.subscribe('files', function() {});
 
+      H.subscribe('imagenes', function() {});
+
+			H.subscribe('usuarios', function() {
 					console.log(Usuarios.find().fetch().length);
 			});
 
@@ -35,6 +40,9 @@ Template.privado.helpers({
 	user: function () {
 		return Usuarios.findOne({_id: FlowRouter.getParam('id')}).username;
 	},
+  imagenes() {
+    return Imagenes.find({mensajeId: this._id});
+  },
 	pais: function () {
 		return Usuarios.findOne({_id: FlowRouter.getParam('id')}).profile.pais;
 	},
@@ -43,6 +51,9 @@ Template.privado.helpers({
 	},
 	mensajes() {
 		return Mensajes.find()
+	},
+  avatar() {
+		return Files.find({userId: this.usuarioId})
 	},
 	nombre(username) {
 		let nombre = username;
@@ -75,7 +86,16 @@ Template.privado.events({
 				template.find("[name='mensaje']").value = ""
 			}
 		});
-	}
+	},
+  'click .grabar'() {
+    let src = 'cdvfile://localhost/temporary/recording.mp3';
+    let mensaje = new Media(src, function () {
+      alert('grabado')
+    });
+
+    // Record audio
+    mensaje.startRecord();
+  }
 })
 
 Template.privado2.onCreated(function () {
@@ -85,6 +105,11 @@ Template.privado2.onCreated(function () {
 		H.subscribe('conversaciones', function() {
 		});
 	})
+
+  H.subscribe('files', function() {
+
+
+  });
 
 	H.subscribe('usuarios', function() {
 
@@ -104,6 +129,9 @@ Template.privado2.helpers({
 		} else {
 			return nombre
 		}
+	},
+  avatar() {
+		return Files.find({userId: this.usuarioId})
 	},
 	id: function () {
 		return H.userId()

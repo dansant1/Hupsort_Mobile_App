@@ -8,24 +8,41 @@ Template.login.events({
   	}
 
   	if (datos.email !== "" && datos.password !== "") {
-  		H.call("login",
-	{
-        "password": datos.password,
-        "user" : {
-            "email": datos.email
-        }
-    },
-   	function(err,result) {
-    	if (err) {
-    		console.log(err);
-    	} else {
-    			H.setUserId(result.id);
+      //alert(datos)
 
-    			console.log('funciona');
-    			console.log(H.userId());
-    			FlowRouter.go('/chat');
-    		}
-    	});
+      DDP.loginWithPassword(H, {email: datos.email}, datos.password, function (error, result) {
+
+        if (error) {
+          alert(error);
+        } else {
+          //alert('hola')
+          H.setUserId(result.id);
+
+          //alert(result.id)
+
+          console.log(H.userId());
+          FlowRouter.go('/chat');
+        }
+
+      })
+    //   H.call("login", {
+    //     "password": datos.password,
+    //     "user" : {
+    //         "email": datos.email
+    //     }
+    // }, function(err,result) {
+    //   //alert('hola')
+    // 	if (err) {
+    // 		alert(err);
+    // 	} else {
+    //     alert(result.id)
+    // 			H.setUserId(result.id);
+    //
+    // 			console.log('funciona');
+    // 			console.log(H.userId());
+    // 			FlowRouter.go('/chat');
+    // 		}
+    // 	});
   	}
   }
 

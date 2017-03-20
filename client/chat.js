@@ -1,14 +1,17 @@
 Mensajes = new Mongo.Collection('mensajes', H);
 Usuarios = new Mongo.Collection('users', H);
 
+Files = new Mongo.Collection('files', H);
+
 Amigos = new Mongo.Collection('amigos', H);
 Conversaciones = new Mongo.Collection('conversaciones', H);
 Publicaciones = new Mongo.Collection('muro', H);
 
+Imagenes = new Mongo.Collection('imagenes', H);
+
 Comentarios = new Mongo.Collection('comentarios', H);
 Likes = new Mongo.Collection('likes', H);
 
-Avatares = new Mongo.Collection('avatars', H);
 
 function gotoBottom(id){
    var div = document.getElementById(id);
@@ -33,6 +36,12 @@ Template.chat.onCreated(function () {
    			}, 500);
 			});
 
+      H.subscribe('files', function() {
+
+
+  		});
+
+
 			H.subscribe('usuarios', function() {
 
 					console.log(Usuarios.find().fetch().length);
@@ -45,7 +54,7 @@ Template.chat.onCreated(function () {
 
 			H.subscribe('avatares', function() {
 
-					console.log(Avatares.find().fetch().length);
+					//console.log(Avatares.find().fetch().length);
 			});
 
 
@@ -61,6 +70,9 @@ Template.chat.helpers({
 	},
 	mid: function () {
 		return H.userId()
+	},
+  avatar() {
+		return Files.find({userId: this._id})
 	},
 	nombre(username) {
 		let nombre = username;
