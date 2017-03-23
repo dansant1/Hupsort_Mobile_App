@@ -60,6 +60,9 @@ Template.perfil.helpers({
 	avatar() {
 		return Files.find({userId: FlowRouter.getParam('user')})
 	},
+	avatar2() {
+		return Files.find({userId: this.amigoId})
+	},
 	imagenes() {
 		return ImagenesMuro.find({pubId: this._id})
 	},
@@ -73,25 +76,25 @@ Template.perfil.helpers({
 		return Publicaciones.find();
 	},
 	username: function () {
-		return Usuarios.findOne({_id: FlowRouter.getParam('user')}).username
+		return Meteor.users.findOne({_id: FlowRouter.getParam('user')}).username
 	},
 	estado() {
-		return Usuarios.findOne({_id: FlowRouter.getParam('user')}).profile.estado
+		return Meteor.users.findOne({_id: FlowRouter.getParam('user')}).profile.estado
 	},
 	pais() {
-		return Usuarios.findOne({_id: FlowRouter.getParam('user')}).profile.pais
+		return Meteor.users.findOne({_id: FlowRouter.getParam('user')}).profile.pais
 	},
 	genero() {
-		return Usuarios.findOne({_id: FlowRouter.getParam('user')}).profile.genero
+		return Meteor.users.findOne({_id: FlowRouter.getParam('user')}).profile.genero
 	},
 	condicion() {
-		return Usuarios.findOne({_id: FlowRouter.getParam('user')}).profile.condicion
+		return Meteor.users.findOne({_id: FlowRouter.getParam('user')}).profile.condicion
 	},
 	orientacion() {
-		return Usuarios.findOne({_id: FlowRouter.getParam('user')}).profile.orientacion
+		return Meteor.users.findOne({_id: FlowRouter.getParam('user')}).profile.orientacion
 	},
 	edad() {
-		return Usuarios.findOne({_id: FlowRouter.getParam('user')}).profile.edad
+		return Meteor.users.findOne({_id: FlowRouter.getParam('user')}).profile.edad
 	},
 	id: function () {
 		return FlowRouter.getParam('user')
@@ -119,6 +122,8 @@ Template.perfil.helpers({
 Template.perfil.events({
 	'click .logout': function () {
 		FlowRouter.go('/')
+		H.setUserId(undefined);
+
 	},
 	'click .reportar'() {
 		Modal.show('Reportar')
@@ -126,7 +131,7 @@ Template.perfil.events({
 	'click .a': function () {
 		let datos = {
 			para: FlowRouter.getParam('user'),
-			username: Usuarios.findOne({_id: H.userId()}).username
+			username: Meteor.users.findOne({_id: H.userId()}).username
 		}
 		H.call('nuevaSolicitud', datos, function (err) {
 			if (err) {

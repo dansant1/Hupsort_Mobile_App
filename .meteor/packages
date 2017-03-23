@@ -31,3 +31,5 @@ accounts-password
 peppelg:bootstrap-3-modal
 ongoworks:ddp-login
 edgee:slingshot
+u2622:persistent-session
+session

@@ -1,6 +1,10 @@
 
 
 <template name="login">
+	{{#if hayUsuario}}
+		
+		{{>chat}}
+	{{else}}
 	<div class="all-page">
 		<div class="logo-page">
 			<div class="splash">
@@ -17,4 +21,6 @@
 			<p><a href="/recordar">Olvidé mi contraseña</a></p>
 		</div>
 	</div>
+
+	{{/if}}
 </template>

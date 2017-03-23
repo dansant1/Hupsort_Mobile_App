@@ -20,6 +20,8 @@ Template.login.events({
             "remote.userId",
             result.id
           );
+          console.log(result.token);
+          Session.setPersistent('_storedLoginToken', result.token);
           H.setUserId(result.id);
 
           //alert(result.id)
@@ -29,26 +31,19 @@ Template.login.events({
         }
 
       })
-    //   H.call("login", {
-    //     "password": datos.password,
-    //     "user" : {
-    //         "email": datos.email
-    //     }
-    // }, function(err,result) {
-    //   //alert('hola')
-    // 	if (err) {
-    // 		alert(err);
-    // 	} else {
-    //     alert(result.id)
-    // 			H.setUserId(result.id);
-    //
-    // 			console.log('funciona');
-    // 			console.log(H.userId());
-    // 			FlowRouter.go('/chat');
-    // 		}
-    // 	});
+
   	}
   }
 
 
 });
+
+Template.login.helpers({
+  hayUsuario() {
+    if (H.userId()) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+})

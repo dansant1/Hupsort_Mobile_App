@@ -29,12 +29,12 @@
 		<br>
 		<div class="raya"></div>
 
-		<div class="mensajes">
+		<div class="mensajes" id="mensajes3">
 			{{#each mensajes}}
-			<div class="mensaje" id="mensajes3">
+			<div class="mensaje">
 
 				<p class="usuario">{{de.nombre}}</p>
-				<br>
+
 				{{#each imagenes}}
 				<img src="{{this.url}}" alt="{{url}}">
 				{{/each}}
@@ -45,12 +45,6 @@
 		</div>
 		<div class="box">
 			<input type="text" placeholder="Escribe tu mensaje" name="mensaje" class="in" data-emojiable="true">
-			<!--<button class="send" style="background-color: white; color: #ff5252;">
-				<i class="fa fa-paperclip" aria-hidden="true"></i>
-			</button> -->
-			<!-- <button class="send grabar" style="background-color: white; color: #B24357">
-				<i class="fa fa-volume-up" aria-hidden="true"></i>
-			</button> -->
 			<button class="send" style="right: -75px">
 				<i class="fa fa-paper-plane" aria-hidden="true"></i>
 			</button>

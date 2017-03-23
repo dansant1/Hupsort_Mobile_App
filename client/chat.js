@@ -1,6 +1,37 @@
-Mensajes = new Mongo.Collection('mensajes', H);
-Usuarios = new Mongo.Collection('users', H);
+Meteor.startup(function () {
 
+  Meteor.connection = H;
+  Accounts.connection = Meteor.connection;
+  Meteor.users = new Meteor.Collection('users', {connection: H});
+  Meteor.connection.subscribe('usuarios');
+
+  Tracker.autorun(function () {
+    let token = Session.get('_storedLoginToken');
+
+    if (token) {
+      Meteor.loginWithToken(token, function(err) {
+        if(!err) console.log('loginWithToken ',token);
+        if(err) {
+            // Using for displaying login errors in app
+            Session.set('ddpErrors', err);
+        }
+      });
+    }
+
+  });
+
+  Tracker.autorun(function(){
+    var user = Meteor.user();
+    console.log('autorun.user: ' + Accounts._storedLoginToken());
+    if(user) {
+      // using u2622:persistent-session
+      Session.setPersistent('_storedLoginToken', Accounts._storedLoginToken());
+    }
+  });
+
+});
+
+Mensajes = new Mongo.Collection('mensajes', H);
 Files = new Mongo.Collection('files', H);
 
 Amigos = new Mongo.Collection('amigos', H);
@@ -19,9 +50,12 @@ function gotoBottom(id){
 }
 
 Template.chat.onRendered(function () {
+  Template.instance.color = new ReactiveVar("#88cc33")
 	$('#cp6').colorpicker({
       color: "#88cc33",
       horizontal: true
+  }).on('changeColor', function(e) {
+      Template.instance.color.set(e.color.toString('rgba'))
   });
 })
 
@@ -44,7 +78,7 @@ Template.chat.onCreated(function () {
 
 			H.subscribe('usuarios', function() {
 
-					console.log(Usuarios.find().fetch().length);
+
 			});
 
 			H.subscribe('amigos', function() {
@@ -66,7 +100,7 @@ Template.chat.helpers({
 		return Mensajes.find()
 	},
 	usuarios: function () {
-		return Usuarios.find();
+		return Meteor.users.find();
 	},
 	mid: function () {
 		return H.userId()
@@ -89,11 +123,12 @@ Template.chat.helpers({
 Template.chat.events({
 	'click .logout': function () {
 		FlowRouter.go('/')
+    H.setUserId(undefined);
 	},
 	'click .d': function (event, template) {
 
 		let mensaje = template.find("[name='mensaje']").value
-		let color = 'black'
+		let color = Template.instance.color.get()
 
 		H.call('enviarMensajeChat', mensaje, color, function (err) {
 			if (err) {

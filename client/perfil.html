@@ -63,26 +63,24 @@
 
 			{{#each amigos}}
 			<a class="user" href="/perfil/{{this.amigoId}} ">
-				<img src="/a1.png" alt="">
+				{{#each avatar2}}
+				<img src="{{this.url}}" alt="{{this.url}}">
+				{{/each}}
 				<p>{{this.amigo}}</p>
 			</a>
 			{{/each}}
 
 		</div>
 		{{/if}}
-		<br>
+		<br><br>
 		<div class="muro">
 			{{#if esMiMuro}}
 				<div class="pub" style="padding-top: 33px;">
 					<input type="text" class="comentario" name="comentario" placeholder="Comparte lo que desees..." style="margin-left: 0px; width: 90%">
-					<!-- <span class="btn btn-default btn-file" style="background: #B24357;
-					border-color: #B24357;
-					color: white;">
-    				<i class="fa fa-picture-o" aria-hidden="true"></i> <input id="foto" type="file" class="pub">
-					</span> -->
+
 					<br>
 					<br>
-					<input type="submit" class="enviar-comentario ec" value="Postear" style="width: 62px;">
+					<input type="submit" class="enviar-comentario ec" value="Postear" style="width: 90px;">
 				</div>
 				{{/if}}
 				{{#each publicaciones}}
@@ -104,7 +102,7 @@
 					</span>
 					<input type="text" class="comentario co{{this._id}}" name="co" style="width: 95%" placeholder="Escriba un comentario">
 					<br><br>
-					<input type="button" class="enviar-comentario comentar" value="Comentar">
+					<input type="button" class="enviar-comentario comentar" style="width: 90px;" value="Comentar">
 					<br>
 					<br>
 					{{#each comentarios}}

@@ -24,7 +24,7 @@ Template.privado.onCreated(function () {
       H.subscribe('imagenes', function() {});
 
 			H.subscribe('usuarios', function() {
-					console.log(Usuarios.find().fetch().length);
+
 			});
 
 	});
@@ -35,16 +35,16 @@ Template.privado.helpers({
 		return Conversaciones.find({},  {limit: 5});
 	},
 	username() {
-		return Usuarios.findOne({_id: this.usuarioId}).username;
+		return Meteor.users.findOne({_id: this.usuarioId}).username;
 	},
 	user: function () {
-		return Usuarios.findOne({_id: FlowRouter.getParam('id')}).username;
+		return Meteor.users.findOne({_id: FlowRouter.getParam('id')}).username;
 	},
   imagenes() {
     return Imagenes.find({mensajeId: this._id});
   },
 	pais: function () {
-		return Usuarios.findOne({_id: FlowRouter.getParam('id')}).profile.pais;
+		return Meteor.users.findOne({_id: FlowRouter.getParam('id')}).profile.pais;
 	},
 	id: function () {
 		return H.userId()
@@ -69,6 +69,7 @@ Template.privado.helpers({
 Template.privado.events({
 	'click .logout': function () {
 		FlowRouter.go('/')
+      H.setUserId(undefined);
 	},
 	'click .send': function (event, template) {
 
@@ -113,7 +114,7 @@ Template.privado2.onCreated(function () {
 
 	H.subscribe('usuarios', function() {
 
-			console.log(Usuarios.find().fetch().length);
+
 	});
 })
 
@@ -137,7 +138,7 @@ Template.privado2.helpers({
 		return H.userId()
 	},
 	username() {
-		return Usuarios.findOne({_id: this.usuarioId}).username;
+		return Meteor.users.findOne({_id: this.usuarioId}).username;
 	},
 });
 
