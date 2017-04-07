@@ -12,8 +12,16 @@ App.icons({
   'android_hdpi': 'public/res/drawable-hdpi/ic_launcher.png',
   'android_xhdpi': 'public/res/drawable-xhdpi/ic_launcher.png',
   'android_xxhdpi': 'public/res/drawable-xxhdpi/ic_launcher.png',
-  'android_xxxhdpi': 'public/res/drawable-xxxhdpi/ic_launcher.png'
+  'android_xxxhdpi': 'public/res/drawable-xxxhdpi/ic_launcher.png',
+  'android_ldpi_portrait': 'public/res/splash/200x320px.png',
+  'android_mdpi_landscape': 'public/res/splash/480x320px.png',
+  'android_hdpi_portrait': 'public/res/splash/480x800px.png',
+  'android_hdpi_landscape': 'public/res/splash/800x480px.png',
+  'android_xhdpi_portrait': 'public/res/splash/1280x720.png',
+
 });
+
+App.accessRule('*')
 
 // Set PhoneGap/Cordova preferences
 App.setPreference('BackgroundColor', '0xff0000ff');

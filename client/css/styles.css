@@ -180,7 +180,7 @@ hr {
 .user img {
 	border-radius: 18%;
 	width: 100%;
-  height: 100%;
+  height: 121%;
 }
 
 .user p {
@@ -377,15 +377,16 @@ i.remove {
 
 .foto img {
 	width: 100px;
-	height: 100px;
-	border-radius: 4px;
-	display: inline-block;
-	margin-top: 20px;
-	margin-bottom: 10px;
+  height: 128px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 26px;
+  margin-left: -11px;
 }
 
 .portada h1 {
 	margin: 0 auto;
+	margin-top: -25px;
 	text-align: center;
 	width: 80%;
 	color: white;

@@ -1,5 +1,1 @@
-H = DDP.connect('http://app.hupsort.com');
-
-
-
-// H = DDP.connect('http://localhost:3000');
+H = DDP.connect('https://www.hupsort.com');
