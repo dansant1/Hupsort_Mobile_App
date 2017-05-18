@@ -1,5 +1,9 @@
 <template name="editarAvatar">
-  <canvas id="avatar" style="margin-left: -45px"></canvas>
+  <div class="data">
+    <a href="/chat" style="color: white"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+    <h5> Editar Avatar</h5>
+  </div>
+  <canvas id="avatar"></canvas>
   <div id="container">
 	  <div class="scroll">
       <input data-content="content-1" id="tab-1" type="radio" name="tab-group" checked="checked" />
@@ -24,7 +28,7 @@
       {{/if}}
       <input data-content="content-10" id="tab-10" type="radio" name="tab-group" />
       <label for="tab-10">Ropa</label>
-      <input data-content="content-12" id="tab-11" type="radio" name="tab-group" />
+      <input data-content="content-11" id="tab-11" type="radio" name="tab-group" />
       <label for="tab-11">Accesorios</label>
 
 	  </div>
@@ -32,9 +36,58 @@
 
 	    <div id="content">
 
-          <div id="content-1">
+          <div id="content-1" style="display: block; opacity: 1; width: 100%">
 
 
+            <img src="/avatares/a/rostros/{{tipo}}/blanco/1.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/blanco/2.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/blanco/3.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/blanco/4.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/blanco/5.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/blanco/6.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/blanco/7.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/blanco/8.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/blanco/9.png" class="rostros">
+
+            <img src="/avatares/a/rostros/{{tipo}}/palido/1.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/palido/2.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/palido/3.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/palido/4.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/palido/5.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/palido/6.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/palido/7.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/palido/8.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/palido/9.png" class="rostros">
+
+            <img src="/avatares/a/rostros/{{tipo}}/moreno/1.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/moreno/2.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/moreno/3.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/moreno/4.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/moreno/5.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/moreno/6.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/moreno/7.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/moreno/8.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/moreno/9.png" class="rostros">
+
+            <img src="/avatares/a/rostros/{{tipo}}/negro/1.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/negro/2.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/negro/3.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/negro/4.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/negro/5.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/negro/6.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/negro/7.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/negro/8.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/negro/9.png" class="rostros">
+
+            <img src="/avatares/a/rostros/{{tipo}}/trigueno/1.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/trigueno/2.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/trigueno/3.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/trigueno/4.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/trigueno/5.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/trigueno/6.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/trigueno/7.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/trigueno/8.png" class="rostros">
+            <img src="/avatares/a/rostros/{{tipo}}/trigueno/9.png" class="rostros">
 
 
 
@@ -42,47 +95,349 @@
 
           <div id="content-2">
 
+            <img src="/avatares/a/cabello/{{tipo}}/negro/1.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/negro/2.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/negro/3.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/negro/4.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/negro/5.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/negro/6.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/negro/7.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/negro/8.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/negro/9.png" class="cabellos">
+
+            <img src="/avatares/a/cabello/{{tipo}}/castanoclaro/1.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/castanoclaro/2.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/castanoclaro/3.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/castanoclaro/4.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/castanoclaro/5.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/castanoclaro/6.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/castanoclaro/7.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/castanoclaro/8.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/castanoclaro/9.png" class="cabellos">
+
+            <img src="/avatares/a/cabello/{{tipo}}/castanooscuro/1.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/castanooscuro/2.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/castanooscuro/3.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/castanooscuro/4.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/castanooscuro/5.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/castanooscuro/6.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/castanooscuro/7.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/castanooscuro/8.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/castanooscuro/9.png" class="cabellos">
+
+            <img src="/avatares/a/cabello/{{tipo}}/gris/1.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/gris/2.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/gris/3.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/gris/4.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/gris/5.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/gris/6.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/gris/7.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/gris/8.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/gris/9.png" class="cabellos">
+
+            <img src="/avatares/a/cabello/{{tipo}}/rubio/1.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/rubio/2.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/rubio/3.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/rubio/4.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/rubio/5.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/rubio/6.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/rubio/7.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/rubio/8.png" class="cabellos">
+            <img src="/avatares/a/cabello/{{tipo}}/rubio/9.png" class="cabellos">
+
 	        </div>
 
 	        <div id="content-3">
+            <img src="/avatares/a/ojos/{{tipo}}/marronclaro/1.png" class="ojos">
+            <img src="/avatares/a/ojos/{{tipo}}/marronclaro/2.png" class="ojos">
+            <img src="/avatares/a/ojos/{{tipo}}/marronclaro/3.png" class="ojos">
+            <img src="/avatares/a/ojos/{{tipo}}/marronclaro/4.png" class="ojos">
+            <img src="/avatares/a/ojos/{{tipo}}/marronclaro/6.png" class="ojos">
+            <img src="/avatares/a/ojos/{{tipo}}/marronclaro/7.png" class="ojos">
+            <img src="/avatares/a/ojos/{{tipo}}/marronclaro/8.png" class="ojos">
+            <img src="/avatares/a/ojos/{{tipo}}/marronclaro/9.png" class="ojos">
 
-	        </div>
+            <img src="/avatares/a/ojos/{{tipo}}/azul/1.png" class="ojos">
+            <img src="/avatares/a/ojos/{{tipo}}/azul/2.png" class="ojos">
+            <img src="/avatares/a/ojos/{{tipo}}/azul/3.png" class="ojos">
+            <img src="/avatares/a/ojos/{{tipo}}/azul/4.png" class="ojos">
+            <img src="/avatares/a/ojos/{{tipo}}/azul/6.png" class="ojos">
+            <img src="/avatares/a/ojos/{{tipo}}/azul/7.png" class="ojos">
+            <img src="/avatares/a/ojos/{{tipo}}/azul/8.png" class="ojos">
+            <img src="/avatares/a/ojos/{{tipo}}/azul/9.png" class="ojos">
 
-          <div id="content-3">
+            <img src="/avatares/a/ojos/{{tipo}}/marronoscuro/1.png" class="ojos">
+            <img src="/avatares/a/ojos/{{tipo}}/marronoscuro/2.png" class="ojos">
+            <img src="/avatares/a/ojos/{{tipo}}/marronoscuro/3.png" class="ojos">
+            <img src="/avatares/a/ojos/{{tipo}}/marronoscuro/4.png" class="ojos">
+            <img src="/avatares/a/ojos/{{tipo}}/marronoscuro/6.png" class="ojos">
+            <img src="/avatares/a/ojos/{{tipo}}/marronoscuro/7.png" class="ojos">
+            <img src="/avatares/a/ojos/{{tipo}}/marronoscuro/8.png" class="ojos">
+            <img src="/avatares/a/ojos/{{tipo}}/marronoscuro/9.png" class="ojos">
+
+            <img src="/avatares/a/ojos/{{tipo}}/miel/1.png" class="ojos">
+            <img src="/avatares/a/ojos/{{tipo}}/miel/2.png" class="ojos">
+            <img src="/avatares/a/ojos/{{tipo}}/miel/3.png" class="ojos">
+            <img src="/avatares/a/ojos/{{tipo}}/miel/4.png" class="ojos">
+            <img src="/avatares/a/ojos/{{tipo}}/miel/6.png" class="ojos">
+            <img src="/avatares/a/ojos/{{tipo}}/miel/7.png" class="ojos">
+            <img src="/avatares/a/ojos/{{tipo}}/miel/8.png" class="ojos">
+            <img src="/avatares/a/ojos/{{tipo}}/miel/9.png" class="ojos">
+
+            <img src="/avatares/a/ojos/{{tipo}}/verde/1.png" class="ojos">
+            <img src="/avatares/a/ojos/{{tipo}}/verde/2.png" class="ojos">
+            <img src="/avatares/a/ojos/{{tipo}}/verde/3.png" class="ojos">
+            <img src="/avatares/a/ojos/{{tipo}}/verde/4.png" class="ojos">
+            <img src="/avatares/a/ojos/{{tipo}}/verde/6.png" class="ojos">
+            <img src="/avatares/a/ojos/{{tipo}}/verde/7.png" class="ojos">
+            <img src="/avatares/a/ojos/{{tipo}}/verde/8.png" class="ojos">
+            <img src="/avatares/a/ojos/{{tipo}}/verde/9.png" class="ojos">
 
 	        </div>
 
           <div id="content-4">
-
+            <img src="/avatares/a/expresiones/1.png" class="expresiones">
+            <img src="/avatares/a/expresiones/2.png" class="expresiones">
+            <img src="/avatares/a/expresiones/3.png" class="expresiones">
+            <img src="/avatares/a/expresiones/4.png" class="expresiones">
+            <img src="/avatares/a/expresiones/5.png" class="expresiones">
+            <img src="/avatares/a/expresiones/6.png" class="expresiones">
+            <img src="/avatares/a/expresiones/7.png" class="expresiones">
+            <img src="/avatares/a/expresiones/8.png" class="expresiones">
+            <img src="/avatares/a/expresiones/9.png" class="expresiones">
 	        </div>
 
           <div id="content-5">
+            <img src="/avatares/a/cejas/{{tipo}}/negro/1.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/negro/2.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/negro/3.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/negro/4.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/negro/5.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/negro/6.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/negro/7.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/negro/8.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/negro/9.png" class="cejas">
 
+            <img src="/avatares/a/cejas/{{tipo}}/castanoclaro/1.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/castanoclaro/2.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/castanoclaro/3.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/castanoclaro/4.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/castanoclaro/5.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/castanoclaro/6.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/castanoclaro/7.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/castanoclaro/8.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/castanoclaro/9.png" class="cejas">
+
+            <img src="/avatares/a/cejas/{{tipo}}/castanooscuro/1.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/castanooscuro/2.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/castanooscuro/3.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/castanooscuro/4.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/castanooscuro/5.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/castanooscuro/6.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/castanooscuro/7.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/castanooscuro/8.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/castanooscuro/9.png" class="cejas">
+
+            <img src="/avatares/a/cejas/{{tipo}}/gris/1.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/gris/2.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/gris/3.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/gris/4.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/gris/5.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/gris/6.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/gris/7.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/gris/8.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/gris/9.png" class="cejas">
+
+            <img src="/avatares/a/cejas/{{tipo}}/rubio/1.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/rubio/2.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/rubio/3.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/rubio/4.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/rubio/5.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/rubio/6.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/rubio/7.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/rubio/8.png" class="cejas">
+            <img src="/avatares/a/cejas/{{tipo}}/rubio/9.png" class="cejas">
 	        </div>
 
           <div id="content-6">
-
+            <img src="/avatares/a/narices/{{tipo}}/1.png" class="narices">
+            <img src="/avatares/a/narices/{{tipo}}/2.png" class="narices">
+            <img src="/avatares/a/narices/{{tipo}}/3.png" class="narices">
+            <img src="/avatares/a/narices/{{tipo}}/4.png" class="narices">
+            <img src="/avatares/a/narices/{{tipo}}/5.png" class="narices">
+            <img src="/avatares/a/narices/{{tipo}}/6.png" class="narices">
+            <img src="/avatares/a/narices/{{tipo}}/7.png" class="narices">
+            <img src="/avatares/a/narices/{{tipo}}/8.png" class="narices">
+            <img src="/avatares/a/narices/{{tipo}}/9.png" class="narices">
 	        </div>
 
           <div id="content-7">
+              {{#if esMujer}}
+              <img src="/avatares/a/bocas/{{tipo}}/palido/1.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/palido/2.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/palido/3.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/palido/4.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/palido/5.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/palido/6.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/palido/7.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/palido/8.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/palido/9.png" class="bocas">
 
+              <img src="/avatares/a/bocas/{{tipo}}/rosaclaro/1.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/rosaclaro/2.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/rosaclaro/3.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/rosaclaro/4.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/rosaclaro/5.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/rosaclaro/6.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/rosaclaro/7.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/rosaclaro/8.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/rosaclaro/9.png" class="bocas">
+
+              <img src="/avatares/a/bocas/{{tipo}}/rosaoscuro/1.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/rosaoscuro/2.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/rosaoscuro/3.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/rosaoscuro/4.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/rosaoscuro/5.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/rosaoscuro/6.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/rosaoscuro/7.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/rosaoscuro/8.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/rosaoscuro/9.png" class="bocas">
+
+              <img src="/avatares/a/bocas/{{tipo}}/naranja/1.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/naranja/2.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/naranja/3.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/naranja/4.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/naranja/5.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/naranja/6.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/naranja/7.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/naranja/8.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/naranja/9.png" class="bocas">
+
+              <img src="/avatares/a/bocas/{{tipo}}/rojo/1.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/rojo/2.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/rojo/3.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/rojo/4.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/rojo/5.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/rojo/6.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/rojo/7.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/rojo/8.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/rojo/9.png" class="bocas">
+              {{else}}
+              <img src="/avatares/a/bocas/{{tipo}}/1.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/2.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/3.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/4.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/5.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/6.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/7.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/8.png" class="bocas">
+              <img src="/avatares/a/bocas/{{tipo}}/9.png" class="bocas">
+
+
+              {{/if}}
 	        </div>
 
-          <div id="content-8">
 
+          {{#if esHombre}}
+
+          <div id="content-8">
+            <img src="/avatares/a/barba/1.png" class="barba">
+            <img src="/avatares/a/barba/2.png" class="barba">
+            <img src="/avatares/a/barba/3.png" class="barba">
+            <img src="/avatares/a/barba/4.png" class="barba">
+            <img src="/avatares/a/barba/5.png" class="barba">
+            <img src="/avatares/a/barba/6.png" class="barba">
+            <img src="/avatares/a/barba/7.png" class="barba">
+            <img src="/avatares/a/barba/8.png" class="barba">
+            <img src="/avatares/a/barba/9.png" class="barba">
 	        </div>
 
           <div id="content-9">
-
+            <img src="/avatares/a/bigotes/1.png" class="bigotes">
+            <img src="/avatares/a/bigotes/2.png" class="bigotes">
+            <img src="/avatares/a/bigotes/3.png" class="bigotes">
+            <img src="/avatares/a/bigotes/4.png" class="bigotes">
+            <img src="/avatares/a/bigotes/5.png" class="bigotes">
+            <img src="/avatares/a/bigotes/6.png" class="bigotes">
+            <img src="/avatares/a/bigotes/7.png" class="bigotes">
+            <img src="/avatares/a/bigotes/8.png" class="bigotes">
+            <img src="/avatares/a/bigotes/9.png" class="bigotes">
 	        </div>
-
+          {{/if}}
           <div id="content-10">
+            {{#if esMujer}}
+            <img src="/avatares/a/ropa/{{tipo}}/amarillo/2.png" class="ropa">
+            {{/if}}
+            <img src="/avatares/a/ropa/{{tipo}}/amarillo/3.png" class="ropa">
+            <img src="/avatares/a/ropa/{{tipo}}/amarillo/4.png" class="ropa">
+            <img src="/avatares/a/ropa/{{tipo}}/amarillo/5.png" class="ropa">
+            <img src="/avatares/a/ropa/{{tipo}}/amarillo/6.png" class="ropa">
+            <img src="/avatares/a/ropa/{{tipo}}/amarillo/7.png" class="ropa">
+            <img src="/avatares/a/ropa/{{tipo}}/amarillo/8.png" class="ropa">
+            <img src="/avatares/a/ropa/{{tipo}}/amarillo/9.png" class="ropa">
 
+            <img src="/avatares/a/ropa/{{tipo}}/azul/1.png" class="ropa">
+            {{#if esMujer}}
+            <img src="/avatares/a/ropa/{{tipo}}/azul/2.png" class="ropa">
+            {{/if}}
+            <img src="/avatares/a/ropa/{{tipo}}/azul/3.png" class="ropa">
+            <img src="/avatares/a/ropa/{{tipo}}/azul/4.png" class="ropa">
+            <img src="/avatares/a/ropa/{{tipo}}/azul/5.png" class="ropa">
+            <img src="/avatares/a/ropa/{{tipo}}/azul/6.png" class="ropa">
+            <img src="/avatares/a/ropa/{{tipo}}/azul/7.png" class="ropa">
+            <img src="/avatares/a/ropa/{{tipo}}/azul/8.png" class="ropa">
+            <img src="/avatares/a/ropa/{{tipo}}/azul/9.png" class="ropa">
+
+            <img src="/avatares/a/ropa/{{tipo}}/negro/1.png" class="ropa">
+            {{#if esMujer}}
+            <img src="/avatares/a/ropa/{{tipo}}/negro/2.png" class="ropa">
+            {{/if}}
+            <img src="/avatares/a/ropa/{{tipo}}/negro/3.png" class="ropa">
+            <img src="/avatares/a/ropa/{{tipo}}/negro/4.png" class="ropa">
+            <img src="/avatares/a/ropa/{{tipo}}/negro/5.png" class="ropa">
+            <img src="/avatares/a/ropa/{{tipo}}/negro/6.png" class="ropa">
+            <img src="/avatares/a/ropa/{{tipo}}/negro/7.png" class="ropa">
+            <img src="/avatares/a/ropa/{{tipo}}/negro/8.png" class="ropa">
+            <img src="/avatares/a/ropa/{{tipo}}/negro/9.png" class="ropa">
+
+            <img src="/avatares/a/ropa/{{tipo}}/rojo/1.png" class="ropa">
+            {{#if esMujer}}
+            <img src="/avatares/a/ropa/{{tipo}}/rojo/2.png" class="ropa">
+            {{/if}}
+            <img src="/avatares/a/ropa/{{tipo}}/rojo/3.png" class="ropa">
+            <img src="/avatares/a/ropa/{{tipo}}/rojo/4.png" class="ropa">
+            <img src="/avatares/a/ropa/{{tipo}}/rojo/5.png" class="ropa">
+            <img src="/avatares/a/ropa/{{tipo}}/rojo/6.png" class="ropa">
+            <img src="/avatares/a/ropa/{{tipo}}/rojo/7.png" class="ropa">
+            <img src="/avatares/a/ropa/{{tipo}}/rojo/8.png" class="ropa">
+            <img src="/avatares/a/ropa/{{tipo}}/rojo/9.png" class="ropa">
+
+            <img src="/avatares/a/ropa/{{tipo}}/1.png" class="ropa">
+            {{#if esMujer}}
+            <img src="/avatares/a/ropa/{{tipo}}/2.png" class="ropa">
+            {{/if}}
+            <img src="/avatares/a/ropa/{{tipo}}/3.png" class="ropa">
+            <img src="/avatares/a/ropa/{{tipo}}/4.png" class="ropa">
+            <img src="/avatares/a/ropa/{{tipo}}/5.png" class="ropa">
+            <img src="/avatares/a/ropa/{{tipo}}/6.png" class="ropa">
+            <img src="/avatares/a/ropa/{{tipo}}/7.png" class="ropa">
+            <img src="/avatares/a/ropa/{{tipo}}/8.png" class="ropa">
+            <img src="/avatares/a/ropa/{{tipo}}/9.png" class="ropa">
 	        </div>
 
           <div id="content-11">
-
+            <img src="/avatares/a/accesorios/{{tipo}}/1.png" class="accesorios">
+            <img src="/avatares/a/accesorios/{{tipo}}/2.png" class="accesorios">
+            <img src="/avatares/a/accesorios/{{tipo}}/3.png" class="accesorios">
+            <img src="/avatares/a/accesorios/{{tipo}}/4.png" class="accesorios">
+            <img src="/avatares/a/accesorios/{{tipo}}/5.png" class="accesorios">
+            <img src="/avatares/a/accesorios/{{tipo}}/6.png" class="accesorios">
+            <img src="/avatares/a/accesorios/{{tipo}}/7.png" class="accesorios">
+            <img src="/avatares/a/accesorios/{{tipo}}/8.png" class="accesorios">
+            <img src="/avatares/a/accesorios/{{tipo}}/9.png" class="accesorios">
 	        </div>
 	    </div>
+
+      <button class="save__avatar" id="save-avatar">Guardar</button>
 	</div>
 </template>

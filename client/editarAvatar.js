@@ -14,7 +14,7 @@ Template.editarAvatar.onRendered( () => {
 
   let template = Template.instance();
 
-  let genero = Meteor.user().profile.genero;
+  let genero = Meteor.users.findOne({_id: H.userId()}).profile.genero;
 
   let totalPartes = 7;
   let numeroRecursoCargados = 0;
@@ -133,64 +133,44 @@ Template.editarAvatar.onRendered( () => {
     }
   }
 
-  /*function dlCanvas() {
+  function dlCanvas() {
     let doc = canva.toDataURL('img/png');
 
+    let data = {
+      email: Meteor.users.findOne({_id: H.userId()}).emails[0].address
+    }
+
+    alert(data.email)
+
     canva.toBlob(function(file) {
-      const uploader = new Slingshot.Upload( "uploadToAmazonS3" );
+
+
+
+      const uploader = new Slingshot.Upload( "uploadToAmazonS3", data);
+
 
       uploader.send( file, ( error, url ) => {
         if ( error ) {
-          //Bert.alert( error.message, "warning" );
-          _setPlaceholderText();
+          alert(error)
         } else {
-          Meteor.call( "storeUrlInDatabase", url, ( error ) => {
+          H.call( "storeUrlInDatabase", url, ( error ) => {
             if ( error ) {
               //Bert.alert( error.reason, "warning" );
               //_setPlaceholderText();
               console.log(error)
             } else {
-              console.log('subio!')
-              //Bert.alert( "File uploaded to Amazon S3!", "success" );
-              //_setPlaceholderText();
+              alert('Guardado')
+              FlowRouter.go('/chat')
             }
           });
         }
       });
-      //uploader.send(blob, function(error, downloadUrl) {}) ;
+
     });
-    console.log('guardar');
-    let d = new FS.File(doc);
-    d.name('avatar');
-    d.metadata = {
-      userId: Meteor.userId(),
-    };
-    //doc.metadata.userId = Meteor.userId();
-    if ( Avatares.find({'metadata.userId': Meteor.userId()}).fetch().length > 0 ) {
-      let i = Avatares.find({'metadata.userId': Meteor.userId()}).fetch()[0]._id
-      Avatares.remove({_id: i});
-      Avatares.insert(d, function (err, fileObj) {
-        if (err) {
-          alert('Hubo un problema', 'warning');
-        } else {
-          FlowRouter.go('/chat')
-        }
-      });
-    } else {
-      Avatares.insert(d, function (err, fileObj) {
-        if (err) {
-          alert('Hubo un problema', 'warning');
-        } else {
-          FlowRouter.go('/chat')
-        }
-      });
-    }
-
-
 
   }
 
-  document.getElementById("save-avatar").addEventListener('click', dlCanvas, false);*/
+  document.getElementById("save-avatar").addEventListener('click', dlCanvas, false);
 
 })
 
@@ -200,10 +180,11 @@ Template.editarAvatar.events({
     console.log(content);
     for (var i = 0; i <= 11; i++) {
         $('#content-' + i).css('opacity', '0');
-
+        $('#content-' + i).css('display', 'none');
 
     }
     $('#' + content).css('opacity', '1');
+    $('#' + content).css('display', 'block');
     $('#' + content).css('width', '100%');
 
   },

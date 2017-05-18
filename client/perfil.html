@@ -18,7 +18,9 @@
 					{{#each avatar}}
 					<img src="{{this.url}}" alt="{{url}}">
 					{{/each}}
+					{{#if esMiMuro}}
 					<a href="/edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+					{{/if}}
 				</div>
 				<h1> {{username}} </h1>
 				<p>{{estado}}</p>

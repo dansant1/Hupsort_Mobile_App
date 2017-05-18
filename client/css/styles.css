@@ -552,37 +552,40 @@ iframe {
 
 #container label {
 	display: inline-block;
-	width: 200px;
+	width: 250px;
 	background: #f9f9f9;  /* Fondo de las pestañas */
 	border-radius: .25em .25em 0 0;
 	color: #888;  /* Color del texto de las pestañas */
 	cursor: pointer;
 	float: left;
-	font-size: 1em;  /* Tamaño del texto de las pestañas */
+	font-size: .95em;  /* Tamaño del texto de las pestañas */
 	height: 4.5em;
 	line-height: 2.5em;
-	margin-right: .25em;
+	margin-right: .50em;
 	padding: 1em 2.5em;
 	text-align: center;
+	border-radius: 30px;
+	margin-left: .50em
 }
 
 #container input:hover + label {
-	background: #ddd;  /* Fondo de las pestañas al pasar el cursor por encima */
-	color: #666;  /* Color del texto de las pestañas al pasar el cursor por encima */
+	background: #ddd;
+	color: #666;
 }
 
 #container input:checked + label {
-	background: #f1f1f1;  /* Fondo de las pestañas al presionar */
-	color: #444; /* Color de las pestañas al presionar */
+	background: rgb(178, 67, 87);  /* Fondo de las pestañas al presionar */
+	color: white; /* Color de las pestañas al presionar */
 	position: relative;
 	z-index: 6;
+	box-shadow: 0 2px 5px rgba(0,0,0,.26);
 
 }
 
 #content {
 	background: #f1f1f1;  /* Fondo del contenido */
 	border-radius: 0 .25em .25em .25em;
-	min-height: 20em;  /* Alto del contenido */
+	min-height: 18em;  /* Alto del contenido */
 	position: relative;
 	width: 90%;
 	margin: 10px auto;
@@ -594,9 +597,9 @@ iframe {
 	padding: 1.5em;
 	position: absolute;
 	z-index: -100;
-	/*
+
 	transition: all linear 0.1s;
-	*/
+
 }
 
 #content-1 p {
@@ -642,10 +645,14 @@ input.visible {
 }
 
 #content img {
-	width: 100%;
-	height: 300px;
+	width: 200px;
+	height: 200px;
 	display: inline-block;
-	margin: 5px auto;
+	margin: 0px 65px;
+	background: white;
+	padding: 10px;
+	border-radius: 70%;
+	box-shadow: 0 2px 5px rgba(0,0,0,.26);
 }
 
 #content div {
@@ -653,8 +660,53 @@ input.visible {
 	overflow-y: hidden;
 	width: 90%;
 	white-space: nowrap;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin: 10px auto;
+	margin: 0px auto;
+}
+
+#avatar {
+	display: block;
+	background: white;
+	border-radius: 70%;
+	padding: 5px;
+	padding-bottom: 0px;
+	margin-left: 110px;
+	margin-top: 20px;
+	padding-right: 20px;
+	width: 200px;
+	height: 200px;
+	box-shadow: 0 2px 5px rgba(0,0,0,.26);
+	margin-bottom: 40px;
+}
+
+.save__avatar {
+	background: rgb(178, 67, 87);  /* Fondo de las pestañas al presionar */
+	color: white;
+	border: none;
+	border-radius: 35px;
+	height: 60px;
+	width: 200px;
+	display: block;
+	margin: 5px auto;
+	box-shadow: 0 2px 5px rgba(0,0,0,.26);
+}
+
+.data {
+	background: rgb(178, 67, 87);
+	color: white;
+	width: 100%;
+	padding: 10px;
+	height: 50px;
+}
+
+.data i {
+	display: inline-block;
+	margin-left: 10px;
+	margin-right: 10px;
+	font-size: 24px;
+}
+
+.data h5 {
+	display: inline-block;
+	position: relative;
+	top: -3px;
 }
