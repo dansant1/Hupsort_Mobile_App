@@ -381,7 +381,7 @@ i.remove {
   border-radius: 4px;
   display: inline-block;
   margin-top: 26px;
-  margin-left: -11px;
+  margin-left: 9px;
 }
 
 .portada h1 {
@@ -537,6 +537,7 @@ iframe {
 	white-space: nowrap;
 	display: flex;
 	margin: 10px auto;
+	margin-top: -47px
 }
 
 /* Avatar */
@@ -564,7 +565,7 @@ iframe {
 	margin-right: .50em;
 	padding: 1em 2.5em;
 	text-align: center;
-	border-radius: 30px;
+	border-radius: 17px;
 	margin-left: .50em
 }
 
@@ -665,16 +666,14 @@ input.visible {
 
 #avatar {
 	display: block;
-	background: white;
-	border-radius: 70%;
 	padding: 5px;
 	padding-bottom: 0px;
 	margin-left: 110px;
 	margin-top: 20px;
 	padding-right: 20px;
-	width: 200px;
+	width: 183px;
 	height: 200px;
-	box-shadow: 0 2px 5px rgba(0,0,0,.26);
+
 	margin-bottom: 40px;
 }
 

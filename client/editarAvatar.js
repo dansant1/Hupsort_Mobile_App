@@ -140,7 +140,7 @@ Template.editarAvatar.onRendered( () => {
       email: Meteor.users.findOne({_id: H.userId()}).emails[0].address
     }
 
-    alert(data.email)
+    
 
     canva.toBlob(function(file) {
 
