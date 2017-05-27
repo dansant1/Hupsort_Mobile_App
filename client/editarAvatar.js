@@ -140,7 +140,7 @@ Template.editarAvatar.onRendered( () => {
       email: Meteor.users.findOne({_id: H.userId()}).emails[0].address
     }
 
-    
+
 
     canva.toBlob(function(file) {
 
@@ -240,7 +240,23 @@ Template.editarAvatar.events({
   },
   'click .bigotes'(e, t) {
     t.bigote.src = e.target.src;
-  }
+  },
+  'click .r1'(e, t) {
+    $('#content-1').scrollLeft( 0 )
+
+  },
+  'click .r2'(e, t) {
+    $('#content-1').scrollLeft( 4350 )
+  },
+  'click .r3'(e, t) {
+    $('#content-1').scrollLeft( 8680 )
+  },
+  'click .r4'(e, t) {
+    $('#content-1').scrollLeft( 9010 )
+  },
+  'click .r5'(e, t) {
+    $('#content-1').scrollLeft( 12020 )
+  },
 })
 
 Template.editarAvatar.helpers({

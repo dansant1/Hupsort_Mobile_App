@@ -709,3 +709,34 @@ input.visible {
 	position: relative;
 	top: -3px;
 }
+
+.circle__ {
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	margin: 5px;
+	border-radius: 50%;
+	background-color: red;
+}
+
+.simple__ {
+	list-style: none;
+	display: block;
+	position: relative;
+	top: 0px;
+	left: 10px;
+	margin: 0px auto;
+	z-index: 10001;
+}
+
+.simple__ li {
+	display: inline;
+}
+
+.scrollsito {
+	overflow-x: scroll;
+	overflow-y: hidden;
+	width: 90%;
+	white-space: nowrap;
+	margin: 0px auto;
+}
