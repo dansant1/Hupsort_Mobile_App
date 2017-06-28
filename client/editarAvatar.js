@@ -243,7 +243,6 @@ Template.editarAvatar.events({
   },
   'click .r1'(e, t) {
     $('#content-1').scrollLeft( 0 )
-
   },
   'click .r2'(e, t) {
     $('#content-1').scrollLeft( 4350 )
@@ -257,6 +256,81 @@ Template.editarAvatar.events({
   'click .r5'(e, t) {
     $('#content-1').scrollLeft( 12020 )
   },
+  'click .b1'(e, t) {
+    $('#content-7').scrollLeft( 0 )
+  },
+  'click .b2'(e, t) {
+    $('#content-7').scrollLeft( 4350 )
+  },
+  'click .b3'(e, t) {
+    $('#content-7').scrollLeft( 8680 )
+  },
+  'click .b4'(e, t) {
+    $('#content-7').scrollLeft( 9010 )
+  },
+  'click .b5'(e, t) {
+    $('#content-7').scrollLeft( 12020 )
+  },
+  'click .r01'(e, t) {
+    $('#content-2').scrollLeft( 0 )
+  },
+  'click .r02'(e, t) {
+    $('#content-2').scrollLeft( 4350 )
+  },
+  'click .r03'(e, t) {
+    $('#content-2').scrollLeft( 8680 )
+  },
+  'click .r04'(e, t) {
+    $('#content-2').scrollLeft( 9010 )
+  },
+  'click .r05'(e, t) {
+    $('#content-2').scrollLeft( 12020 )
+  },
+  'click .r001'(e, t) {
+    $('#content-3').scrollLeft( 0 )
+  },
+  'click .r002'(e, t) {
+    $('#content-3').scrollLeft( 4350 )
+  },
+  'click .r003'(e, t) {
+    $('#content-3').scrollLeft( 8680 )
+  },
+  'click .r004'(e, t) {
+    $('#content-3').scrollLeft( 9010 )
+  },
+  'click .r005'(e, t) {
+    $('#content-3').scrollLeft( 12020 )
+  },
+  'click .r0001'(e, t) {
+    $('#content-5').scrollLeft( 0 )
+  },
+  'click .r0002'(e, t) {
+    $('#content-5').scrollLeft( 4350 )
+  },
+  'click .r0003'(e, t) {
+    $('#content-5').scrollLeft( 8680 )
+  },
+  'click .r0004'(e, t) {
+    $('#content-5').scrollLeft( 9010 )
+  },
+  'click .r0005'(e, t) {
+    $('#content-5').scrollLeft( 12020 )
+  },
+  'click .r00001'(e, t) {
+    $('#content-10').scrollLeft( 0 )
+  },
+  'click .r00002'(e, t) {
+    $('#content-10').scrollLeft( 4350 )
+  },
+  'click .r00003'(e, t) {
+    $('#content-10').scrollLeft( 8680 )
+  },
+  'click .r00004'(e, t) {
+    $('#content-10').scrollLeft( 9010 )
+  },
+  'click .r00005'(e, t) {
+    $('#content-10').scrollLeft( 12020 )
+  }
 })
 
 Template.editarAvatar.helpers({
